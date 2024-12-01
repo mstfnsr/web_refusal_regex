@@ -1,6 +1,6 @@
 # Web Crawl Refusal Regular Expressions
 
-This repository contains a collection of meticulously crafted regular expressions (REs) designed for identifying server-side refusal patterns in web crawling datasets. These patterns enable researchers to detect and categorize access blocks, denial messages, and challenges encountered during automated web measurements.
+This repository contains a collection of regular expressions (REs) designed for identifying server-side refusal patterns in web crawling datasets. These patterns enable researchers to detect and categorize refusals encountered during automated web measurements.
 
 ## Overview
 
@@ -8,14 +8,14 @@ The `regular_expressions.py` file is a complementary piece of code to a research
 
 ### Structure of `regular_expressions.py`
 
-The file is structured as a list of dictionaries, where each dictionary represents a specific refusal scenario. The structure of each dictionary is as follows:
+The file is structured as a list of dictionaries, where each dictionary represents a specific refusal content. The structure of each dictionary is as follows:
 
-- **`full_msg`**: A sample full message that the server might return. This serves as the context or example text used to build and validate the regex.
+- **`full_msg`**: A full textual message that was used to build the regex. Alternative forms or translations are added as comments.
 - **`regex`**: The regular expression designed to match the refusal message.
 - **`type`**: The category of refusal (e.g., `block`, `challenge`, `require_js`).
-- **`who`**: The entity being blocked or challenged (e.g., `ip`, `request`, `you`).
-- **`why`**: The reason for the refusal (e.g., `security/malicious`, `geoblock`, `excessive/suspicious`).
-- **`tag`**: Tags indicating specific platforms, tools, or services involved in the refusal (e.g., `cloudflare`, `modsecurity`, `wordfence`).
+- **`who`**: The entity being blocked or challenged, based on what is provided in the page contents (e.g., `ip`, `request`, `you`).
+- **`why`**: The reason for the refusal, inferred from what is provided in the page contents (e.g., `security/malicious`, `geoblock`, `excessive/suspicious`).
+- **`tag`**: Tags indicating specific platforms, tools, or services involved in the refusal, assigned either with regards to contents, or the HTTP Server header associated with the matched records (e.g., `cloudflare`, `modsecurity`, `wordfence`).
 
 #### Example Entry
 
@@ -58,15 +58,6 @@ Contributions are welcome! If you would like to contribute new patterns or impro
 - Fork the repository and create a pull request.
 - Ensure new REs are validated with test data.
 - Add metadata fields (`type`, `who`, `why`, `tag`) for consistency.
-
-### Applications
-
-- **Web Crawling**: Detect and analyze refusal messages to improve crawling strategies.
-- **Web Security**: Understand server-side blocking behaviors and improve bot detection mechanisms.
-
-### Conference Context
-
-The regular expressions in this repository were developed as part of a research paper presented at the [Passive and Active Measurement (PAM) Conference 2025](https://udesa.edu.ar/pam25). 
 
 ### License
 
