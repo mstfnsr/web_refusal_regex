@@ -4,7 +4,7 @@ This repository contains a collection of regular expressions (REs) designed for 
 
 ## Overview
 
-The `regular_expressions.py` file is a complementary piece of code to a research paper presented at the [Passive and Active Measurement (PAM) Conference 2025](https://udesa.edu.ar/pam25). While the paper focuses on analyzing server-side blocks and refusal behaviors in web crawling, this repository provides the regular expressions that were developed and refined as part of the research. These expressions serve as tools for identifying and categorizing refusal messages in web crawling data.
+The `regular_expressions.py` file is a complementary piece of code to a research paper presented at the [Passive and Active Measurement (PAM) Conference 2025](https://udesa.edu.ar/pam25). The paper analyzes server-side blocks and refusal behaviors observed in a [CommonCrawl](https://commoncrawl.org) snapshot. This repository provides the regular expressions developed and refined during the research, serving as tools for identifying and categorizing refusal messages in web crawling data.
 
 ### Structure of `regular_expressions.py`
 
