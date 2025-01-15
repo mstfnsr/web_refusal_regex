@@ -1964,10 +1964,6 @@ nonrefusal_regex_set.append({
 
 # Censorship or service being suspended
 nonrefusal_regex_set.append({
-    "regex"		:	"sorry, blocked\s+site is blocked", #russian censorship page
-    "type"		:	-900
-})
-nonrefusal_regex_set.append({
     "regex"		:	"простите, но данный сайт заблокирован для посещений из российской федерации в соответствии с законодательством рф",
     "type"		:	-900
 })
@@ -1976,7 +1972,7 @@ nonrefusal_regex_set.append({
     "type"		:	-900
 })
 nonrefusal_regex_set.append({
-    "regex"		:	"sorry, you have been blocked you are unable to access",
+    "regex"		:	"sorry, you have been blocked you are unable to access", #at first sight, it might seem like a block page but it occurs when Cloudflare suspends a domain
     "type"		:	-900
 })
 nonrefusal_regex_set.append({
